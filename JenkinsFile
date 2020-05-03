@@ -7,11 +7,11 @@ pipeline
 	 {
 	 steps
 		{
-			
+			sshagent(['Testaws1'])  {
     				
-    				sh 'aws ec2 run-instances --image-id ami-0ad42f4f66f6c1cc9 --count 1 --instance-type t2.micro --key-name Aws --security-group-ids sg-0017458c283f69905 --subnet-id subnet-8924c6f5 --region eu-central-1b'
+    				sh 'aws ec2 run-instances --image-id ami-0ad42f4f66f6c1cc9 --count 1 --instance-type t2.micro  --security-group-ids sg-0017458c283f69905 --subnet-id subnet-8924c6f5 --region eu-central-1b'
   				
-			
+			}
 		}
 	 }
 	 
