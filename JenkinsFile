@@ -1,5 +1,3 @@
-
-
 pipeline
 {
    agent any
@@ -9,7 +7,7 @@ pipeline
 	 {
 	 steps
 		{
-			withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'aws-key']]) {
+			withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-key', accessKeyVariable: 'AWS_ACCESS_KEY_ID',secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
         AWS("--region=eu-central-1b")
     
     				
